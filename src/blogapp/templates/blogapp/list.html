@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="row">
+{% for object in object_list %}
+    {% include 'blogapp/list-tile.html' with blog_post=object truncate=True count=30%}
+{%  endfor  %}
+</div>
+
+{% endblock body %}

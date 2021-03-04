@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="row">
+{% include "blogapp/list-tile.html" with blog_post=object detail=True%}
+
+</div>
+{% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+        <a href="{{object.get_update_url}}"><button class="btn btn-success"><b>Update</b></button></a>
+        <a href="{{object.get_delete_url}}"><button class="btn btn-danger"><b>Delete</b></button></a>
+    {% endif %}
+{% endif %}
+<a href="../"><button class="btn btn-secondary"><b>Back</b></button></a>
+
+{% endblock body %}

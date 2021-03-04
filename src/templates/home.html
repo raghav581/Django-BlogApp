@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>{{title}}</h1>
+{% for object in object_list %}
+{% if object.publish_date %}{% include 'blogapp/list-tile.html' with blog_post=object truncate=True count=40 %}{% endif %}
+
+{% endfor %}
+
+{% endblock body %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1> Are you sure? You want to <b>delete</b> the following:</h1>
+
+<h2> <p> {{ object.title }} </p> </h2>
+<form method='POST'>
+{% csrf_token%}
+<button class='btn-danger'><b>Yes</b></button>
+</form>
+{% endblock body %}
